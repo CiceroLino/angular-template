@@ -1,4 +1,8 @@
 <div class="file-upload" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
-  <input type="file" accept="audio/mp3" (change)="onFileChange($event)" />
-  <p>Arraste e solte um arquivo MP3 ou clique para selecionar</p>
+  <input type="file" accept="audio/mp3,video/mp4" (change)="onFileChange($event)" />
+  <p>Arraste e solte um arquivo MP3/MP4 ou clique para selecionar</p>
+</div>
+<div class="youtube-link">
+  <input matInput placeholder="Cole o link do YouTube" [(ngModel)]="youtubeUrl" />
+  <button mat-raised-button color="accent" (click)="onYoutubeLoad()">Carregar do YouTube</button>
 </div>

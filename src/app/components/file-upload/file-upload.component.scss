@@ -13,3 +13,14 @@
 input[type="file"] {
   display: none;
 }
+
+.youtube-link {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+.youtube-link input[matInput] {
+  flex: 1;
+  min-width: 0;
+}

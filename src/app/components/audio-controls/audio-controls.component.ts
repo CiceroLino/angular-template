@@ -15,13 +15,11 @@ export class AudioControlsComponent {
   @Output() seek = new EventEmitter<number>();
   @Output() volumeChange = new EventEmitter<number>();
 
-  onSeek(event: Event) {
-    const value = (event.target as HTMLInputElement).valueAsNumber;
-    this.seek.emit(value);
+  onSeek(event: any) {
+    this.seek.emit(event.value);
   }
 
-  onVolumeChange(event: Event) {
-    const value = (event.target as HTMLInputElement).valueAsNumber;
-    this.volumeChange.emit(value);
+  onVolumeChange(event: any) {
+    this.volumeChange.emit(event.value);
   }
 }

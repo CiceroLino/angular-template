@@ -1,8 +1,12 @@
-<div class="controls">
-  <button (click)="isPlaying ? pause.emit() : play.emit()">
-    {{ isPlaying ? 'Pause' : 'Play' }}
+<div class="controls mat-elevation-z2">
+  <button mat-raised-button color="primary" (click)="isPlaying ? pause.emit() : play.emit()">
+    <mat-icon>{{ isPlaying ? 'pause' : 'play_arrow' }}</mat-icon>
   </button>
-  <span>{{ currentTime | number:'1.0-0' }} / {{ duration | number:'1.0-0' }}s</span>
-  <input type="range" min="0" [max]="duration" [value]="currentTime" (input)="onSeek($event)" />
-  <input type="range" min="0" max="1" step="0.01" [value]="volume" (input)="onVolumeChange($event)" />
+  <span class="time">{{ currentTime | number:'1.0-0' }} / {{ duration | number:'1.0-0' }}s</span>
+  <mat-slider min="0" [max]="duration" color="accent" class="slider">
+    <input matSliderThumb [value]="currentTime" (input)="onSeek($event)" />
+  </mat-slider>
+  <mat-slider min="0" max="1" step="0.01" color="primary" class="slider">
+    <input matSliderThumb [value]="volume" (input)="onVolumeChange($event)" />
+  </mat-slider>
 </div>

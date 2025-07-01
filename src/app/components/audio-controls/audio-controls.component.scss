@@ -2,23 +2,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  min-width: 260px;
 }
-button {
-  background: #00bcd4;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 0.5rem 1.5rem;
+button[mat-raised-button] {
+  min-width: 48px;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+mat-icon {
+  font-size: 32px;
+}
+.time {
   font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
+  color: #666;
 }
-button:hover {
-  background: #0097a7;
-}
-input[type="range"] {
+mat-slider.slider {
   width: 100%;
-  margin: 0.5rem 0;
+  max-width: 320px;
 }
