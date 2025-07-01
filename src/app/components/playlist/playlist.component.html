@@ -1,0 +1,6 @@
+<ul class="playlist">
+  <li *ngFor="let track of tracks; let i = index" [class.active]="i === currentTrackIndex" (click)="onSelect(i)">
+    <span>{{ track.name }}</span>
+    <span>{{ track.duration | number:'1.0-0' }}s</span>
+  </li>
+</ul>

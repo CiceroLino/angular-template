@@ -1,0 +1,8 @@
+<div class="controls">
+  <button (click)="isPlaying ? pause.emit() : play.emit()">
+    {{ isPlaying ? 'Pause' : 'Play' }}
+  </button>
+  <span>{{ currentTime | number:'1.0-0' }} / {{ duration | number:'1.0-0' }}s</span>
+  <input type="range" min="0" [max]="duration" [value]="currentTime" (input)="onSeek($event)" />
+  <input type="range" min="0" max="1" step="0.01" [value]="volume" (input)="onVolumeChange($event)" />
+</div>
